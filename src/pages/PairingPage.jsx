@@ -20,6 +20,11 @@ export const PairingPage = () => {
 
             console.log(response);
         })
+
+        socket.on("session:connected", (callback) => {
+            console.log("phone and pc connected")
+            navigate('/paired');
+        })
     }, []);
 
     return(

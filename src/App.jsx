@@ -1,14 +1,16 @@
-import { useState } from 'react'
+import { useState      } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-//Pages
-import { LandingPage } from './pages/LandingPage'
-import { PairingPage } from './pages/PairingPage'
+// Pages
+import { LandingPage   } from './pages/LandingPage'
+import { PairingPage   } from './pages/PairingPage'
+import { ConnectedPage } from './pages/ConnectedPage'
 
-//Mobile Pages
+// Mobile Pages
 import { MobilePairingPage } from './pages/mobile/MobilePairingPage'
 import { MobileLandingPage } from './pages/mobile/MobileLandingPage'
 
+// Styles
 import './App.css'
 
 function App() {
@@ -16,10 +18,11 @@ function App() {
   return (
     <>
         <Routes>
-            <Route path='/'             element={<LandingPage/>}/>
-            <Route path='/pairing'      element={<PairingPage/>}/>
-            <Route path='/mobile'       element={<MobilePairingPage/>}/>
-            <Route path='/mobile/:code' element={<MobileLandingPage/>}/>
+            <Route path = '/'             element = { <LandingPage/>       }/>
+            <Route path = '/pairing'      element = { <PairingPage/>       }/>
+            <Route path = '/paired'       element = { <ConnectedPage/>     }/>
+            <Route path = '/mobile'       element = { <MobilePairingPage/> }/>
+            <Route path = '/mobile/:code' element = { <MobileLandingPage/> }/>
         </Routes>
     </>
   )

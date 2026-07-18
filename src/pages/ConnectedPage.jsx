@@ -1,8 +1,8 @@
-export const MobileLandingPage = () => {
+export const ConnectedPage = () => {
 
     return (
         <div className=" w-full h-screen">
-            sdf
+            Currently
         </div>
     )
 }
