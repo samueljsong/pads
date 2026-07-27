@@ -37,7 +37,7 @@ export const PairingPage = () => {
                             <QRCode value={qrValue}/>
                         </div>
                         <div className=" text-center flex flex-col gap-2">
-                            <p className=" text-text text-2xl">Scan the QR or join at pulse.com</p>
+                            <p className=" text-text text-2xl">Scan the QR or connect at pulse.com</p>
                             <h1 className=" text-text text-4xl tracking-widest">
                                 {code}
                             </h1>
