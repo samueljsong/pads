@@ -24,11 +24,13 @@ export const PadButton = ({name}) => {
 
     return (
         <div className="
-            text-text w-10 aspect-square bg-primary rounded-md flex flex-col items-center justify-center 
+            w-full aspect-square bg-primary rounded-md flex flex-col items-center justify-center 
             hover:bg-primary-hover cursor-pointer"
             onClick={onButtonClickHandler}
         >
-            {name}
+            <h1 className=" text-text text-4xl">
+                {name}
+            </h1>
         </div>
     )
 }

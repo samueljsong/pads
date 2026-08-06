@@ -1,15 +1,21 @@
 import { socket       } from "../socket"
-import { useEffect, useRef    } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Howl, Howler } from "howler"
-import { useState     } from "react";
+import '../App.css'
 
 //Pads
 import { Audios } from "../models/Audio";
 
 export const ConnectedPage = () => {   
-    
+    const [currentAudioKey, setCurrentAudioKey] = useState("");
+
     const currentAudioKeyRef = useRef(null);
     const currentAudioIdRef  = useRef(null);
+
+    const updateCurrentAudioKey = (key) => {
+        currentAudioKeyRef.current = key;
+        setCurrentAudioKey(key);
+    }
 
     useEffect(() => {
         socket.on("session:play", (data, callback) => {
@@ -23,7 +29,7 @@ export const ConnectedPage = () => {
             {
                 console.log('same key pressed');
                 audio.stop(currentId);
-                currentAudioKeyRef.current = null;
+                updateCurrentAudioKey(null);
                 currentAudioIdRef.current = null;
                 return;
             }
@@ -36,7 +42,7 @@ export const ConnectedPage = () => {
             let newAudioId = audio.play('loopPad');
             
             audio.fade(0, 1, 3000, newAudioId);
-            currentAudioKeyRef.current = key;
+            updateCurrentAudioKey(key);
             currentAudioIdRef.current = newAudioId;
         })
 
@@ -46,13 +52,13 @@ export const ConnectedPage = () => {
     }, []);
 
     return (
-        <div className=" w-full h-screen flex justify-center items-center">
+        <div className=" w-full h-screen flex justify-center items-center bg-transparent">
             <div className=" flex flex-col justify-center items-center gap-1">
                 <h1 className=" text-text text-2xl">Currently Playing</h1>
                 {
                     (currentAudioKeyRef.current === null) 
-                        ? <h1 className=" text-text text-4xl">...</h1> 
-                        : <h1 className=" text-text text-4xl">{currentAudioKeyRef.current}</h1>
+                        ? <h1 className=" text-text text-4xl">Nothing...</h1> 
+                        : <h1 className=" text-text text-4xl">{currentAudioKey} Organ Pad</h1>
                 }
             </div>
         </div>

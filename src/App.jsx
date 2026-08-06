@@ -22,7 +22,8 @@ function App() {
             <Route path = '/pairing'      element = { <PairingPage/>       }/>
             <Route path = '/paired'       element = { <ConnectedPage/>     }/>
             <Route path = '/mobile'       element = { <MobilePairingPage/> }/>
-            <Route path = '/mobile/:code' element = { <MobileLandingPage/> }/>
+            <Route path = '/mobile/:code'       element = { <MobilePairingPage/> }/>
+            <Route path = '/mobile/paired/:code' element = { <MobileLandingPage/> }/>
         </Routes>
     </>
   )

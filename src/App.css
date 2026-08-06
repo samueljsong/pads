@@ -4,3 +4,7 @@ body{
     #1C241E 0%,
     #050806 60%);
 }
+
+.customShadow{
+    box-shadow: inset 0px 0px 16px rgba(215, 209, 209, 0.12);
+}

@@ -28,24 +28,18 @@ export const PairingPage = () => {
     }, []);
 
     return(
-        <div className=" flex gap-4 items-center justify-center h-screen w-full">
-            {
-                isConnected 
-                ?             
-                    <>
-                        <div className=" bg-white p-2 rounded-md">
-                            <QRCode value={qrValue}/>
-                        </div>
-                        <div className=" text-center flex flex-col gap-2">
-                            <p className=" text-text text-2xl">Scan the QR or connect at pulse.com</p>
-                            <h1 className=" text-text text-4xl tracking-widest">
-                                {code}
-                            </h1>
-                        </div>
-                    </> 
-                : 
-                    <></>
-            }
+        <div className=" flex gap-4 items-center justify-center h-screen w-full">           
+            <>
+                <div className=" bg-white p-2 rounded-md">
+                    <QRCode value={qrValue}/>
+                </div>
+                <div className=" text-center flex flex-col gap-2">
+                    <p className=" text-text text-2xl">Scan the QR or connect at pulse.com</p>
+                    <h1 className=" text-text text-4xl tracking-widest">
+                        {code}
+                    </h1>
+                </div>
+            </> 
         </div>
     )
 }

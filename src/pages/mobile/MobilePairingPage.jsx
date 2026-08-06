@@ -1,10 +1,23 @@
 import { useState } from 'react'
 import logo from '../../../public/logo.png'
 import { socket } from '../../socket';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export const MobilePairingPage = () => {
     const navigate = useNavigate();
+    const { code } = useParams();
+
+    if (code != null)
+    {
+        socket.emit('session:join', {code: code}, (response) => {
+            let success = response.success;
+
+            if (success)
+                navigate(`/mobile/paired/${code}`);
+            else
+                console.log("wrong code from the link");
+        })
+    }
 
     const [codeInput, setCodeInput] = useState('');
 
@@ -19,7 +32,7 @@ export const MobilePairingPage = () => {
             let success = response.success;
 
             if (success)
-                navigate(`/mobile/${codeInput}`);
+                navigate(`/mobile/paired/${codeInput}`);
             else
                 console.log("Could not connect");
         })
