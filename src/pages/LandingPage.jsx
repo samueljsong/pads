@@ -57,12 +57,12 @@ export const LandingPage = () => {
     }
 
     return (
-        <div className=" flex flex-col w-full h-full">
-            <section className=" flex w-full h-screen flex-col items-center justify-center gap-2">
-                <h1 className=" font-bold text-text text-6xl">
+        <div className=" flex flex-col w-full h-full items-center">
+            <section className=" flex w-[90%] h-screen flex-col items-center justify-center gap-2 md:w-full">
+                <h1 className=" font-bold text-text text-[7vw] lg:text-6xl md:text-5xl sm:text-4xl">
                     Get a Full Sound Anywhere
                 </h1>
-                <h2 className=" text-text-secondary text-lg">
+                <h2 className=" text-text-secondary text-lg text-center">
                     Designed for small worship teams that want a full sound without extra musicians.
                 </h2>
                 <button 
@@ -96,8 +96,8 @@ export const LandingPage = () => {
                 </motion.div>
             </section>
             <section className=" flex flex-col w-full items-center justify-center mt-30">
-                <div className=" flex flex-col w-[50%] h-full items-center justify-center text-center gap-4">
-                    <h2 className=" text-text text-5xl">
+                <div className=" flex flex-col w-[90%] h-full items-center justify-center text-center gap-10 md:w-[50%]">
+                    <h2 className=" text-text text-[7vw] md:text-5xl">
                         What is Pulse?
                     </h2>
                     <p className="text-text-secondary text-lg">
@@ -107,11 +107,11 @@ export const LandingPage = () => {
                 </div>
             </section>
             <section className="flex flex-col w-full items-center justify-center mt-60">
-                <div className=" flex flex-col w-[50%] h-full items-center justify-center text-center gap-4">
-                    <h2 className=" text-text text-5xl">
+                <div className=" flex flex-col w-[50%] h-full items-center justify-center text-center gap-20">
+                    <h2 className=" text-text text-[7vw] md:text-5xl">
                         How it Works
                     </h2>
-                    <div className=" flex gap-4">
+                    <div className=" flex flex-col gap-4 md:flex-row">
                         <InformationContainer details={step1} png={launch}/>
                         <InformationContainer details={step2} png={qr}/>
                         <InformationContainer details={step3} png={control}/>
@@ -119,23 +119,23 @@ export const LandingPage = () => {
                 </div>
             </section>
             <section className="flex flex-col w-full items-center justify-center mt-60 gap-20">
-                <h2 className=" text-text text-5xl text-center">
+                <h2 className=" text-text text-center text-[7vw] md:text-5xl">
                     Find the Perfect Plan 
                     <br/>for your use case
                 </h2>
-                <div className=" flex w-full gap-4 justify-center">
+                <div className=" flex flex-col items-center w-full gap-4 justify-center lg:flex-row">
                     <PlanComponent details={free} />
                     <PlanComponent details={pro} />
                     <PlanComponent details={team}/>
                 </div>
             </section>
-            <section className="flex flex-col w-full items-center justify-center mt-60">
-                <h2 className=" text-text text-5xl">
+            {/* <section className="flex flex-col w-full items-center justify-center mt-60">
+                <h2 className=" text-text text-center text-[7vw] md:text-5xl">
                     Want A Specific Feature?
                 </h2>
-            </section>
+            </section> */}
             <footer className=" mt-60">
-                footer secton
+
             </footer>
         </div>
     )

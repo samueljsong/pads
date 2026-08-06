@@ -3,7 +3,7 @@ import check from '../assets/checkmark.png'
 export const PlanComponent = ({details}) => {
 
     return (
-        <div className=" w-90 h-130 bg-[#0a0a0c] customShadow rounded-xl flex flex-col gap-6 justify-between">
+        <div className=" w-[90%] max-w-90 h-130 bg-[#0a0a0c] customShadow rounded-xl flex flex-col gap-6 justify-between">
             <div className='p-6 flex flex-col gap-6'>
                 {
                     (details.status) 
