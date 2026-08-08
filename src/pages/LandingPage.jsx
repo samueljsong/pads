@@ -56,13 +56,11 @@ export const LandingPage = () => {
         perkName: "Team"
     }
 
-    const checking = import.meta.env.VITE_API_URL;
-
     return (
         <div className=" flex flex-col w-full h-full items-center">
             <section className=" flex w-[90%] h-screen flex-col items-center justify-center gap-2 md:w-full">
                 <h1 className=" font-bold text-text text-[7vw] lg:text-6xl md:text-5xl sm:text-4xl">
-                    Get a Full Sound Anywhere {checking}
+                    Get a Full Sound Anywhere
                 </h1>
                 <h2 className=" text-text-secondary text-lg text-center">
                     Designed for small worship teams that want a full sound without extra musicians.
